@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
+    font-family: 'Unica One', sans-serif;
+    color: #f4e9da;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    margin: 2rem 0 1rem;
+    font-size: 2.8rem;
+    color: #d4af37;
+    text-shadow: 0 0 6px rgba(212, 175, 55, 0.3);
+}
+
+
+.glass-window {
+    border: 6px solid #d4af37;
+    background: linear-gradient(to bottom, #ffeeaa, #ffcc88);
+    border-radius: 20px;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(3px);
+}
+
+.instructions {
+    max-width: 500px;
+    margin-top: 2rem;
+    font-size: 1rem;
+    background: #141414;
+    border: 1px solid #333;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px #0005;
+}
+
+.instructions strong {
+    color: #d4af37;
+}
