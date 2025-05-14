@@ -1,8 +1,8 @@
 import {iFrame} from "./types/iFrame";
 
 export class DrawFrame {
-    private ctx: CanvasRenderingContext2D;
-    private sprite: HTMLImageElement;
+    protected ctx: CanvasRenderingContext2D;
+    protected sprite: HTMLImageElement;
     public frame: iFrame;
     public rotation: number = 0;
 

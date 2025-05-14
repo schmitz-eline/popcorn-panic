@@ -109,7 +109,7 @@ export const settings = {
             dh: 25
         }, {
             sx: 100,
-            sy: 125,
+            sy: 25,
             sw: 25,
             sh: 25,
             dx: 0,
@@ -125,9 +125,9 @@ export const settings = {
             dy: 0,
             dw: 25,
             dh: 25
-        },{
+        }, {
             sx: 125,
-            sy: 125,
+            sy: 25,
             sw: 25,
             sh: 25,
             dx: 0,
