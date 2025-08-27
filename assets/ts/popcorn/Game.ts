@@ -3,6 +3,7 @@ import {Animation} from "../framework25/Animation";
 import {Projectile} from "./Projectile";
 import {Collision} from "../framework25/helpers/Collision";
 import {Timer} from "./Timer";
+import {Score} from "./Score";
 
 export class Game {
     private readonly canvas: HTMLCanvasElement;
@@ -10,12 +11,14 @@ export class Game {
     private animation: Animation;
     private readonly sprite: HTMLImageElement;
     private timer: Timer;
+    private score: Score;
 
     constructor() {
         this.canvas = document.getElementById(settings.canvas.id) as HTMLCanvasElement;
         this.ctx = this.canvas.getContext('2d');
         this.animation = new Animation(this.canvas, this.ctx);
         this.timer = new Timer();
+        this.score = new Score();
         this.sprite = new Image();
         this.sprite.src = settings.sprite;
         this.sprite.addEventListener('load', () => {
@@ -38,8 +41,10 @@ export class Game {
                 )) {
                     if (projectile.hiddenNumber < 0) {
                         this.animation.stop();
+                        this.score.loose();
                         console.log('corn');
                     } else {
+                        this.score.addPoint();
                         console.log('popcorn');
                     }
                 }
@@ -48,6 +53,7 @@ export class Game {
         this.generatePopcorns();
         this.generateCorns();
         this.timer.display();
+        this.score.display();
     }
 
     private generatePopcorns() {
