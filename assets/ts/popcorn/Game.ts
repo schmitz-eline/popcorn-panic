@@ -4,10 +4,10 @@ import {Projectile} from "./Projectile";
 import {Collision} from "../framework25/helpers/Collision";
 
 export class Game {
-    private canvas: HTMLCanvasElement;
-    private ctx: CanvasRenderingContext2D;
+    private readonly canvas: HTMLCanvasElement;
+    private readonly ctx: CanvasRenderingContext2D;
     private animation: Animation;
-    private sprite: HTMLImageElement;
+    private readonly sprite: HTMLImageElement;
 
     constructor() {
         this.canvas = document.getElementById(settings.canvas.id) as HTMLCanvasElement;
