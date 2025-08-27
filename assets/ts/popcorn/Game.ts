@@ -2,21 +2,25 @@ import {settings} from "./settings";
 import {Animation} from "../framework25/Animation";
 import {Projectile} from "./Projectile";
 import {Collision} from "../framework25/helpers/Collision";
+import {Timer} from "./Timer";
 
 export class Game {
     private readonly canvas: HTMLCanvasElement;
     private readonly ctx: CanvasRenderingContext2D;
     private animation: Animation;
     private readonly sprite: HTMLImageElement;
+    private timer: Timer;
 
     constructor() {
         this.canvas = document.getElementById(settings.canvas.id) as HTMLCanvasElement;
         this.ctx = this.canvas.getContext('2d');
         this.animation = new Animation(this.canvas, this.ctx);
+        this.timer = new Timer();
         this.sprite = new Image();
         this.sprite.src = settings.sprite;
         this.sprite.addEventListener('load', () => {
             this.animation.start();
+            this.timer.start();
         });
         this.canvas.addEventListener('click', (event: MouseEvent) => {
             const correctedX = event.clientX - this.canvas.getBoundingClientRect().x;
@@ -43,6 +47,7 @@ export class Game {
         });
         this.generatePopcorns();
         this.generateCorns();
+        this.timer.display();
     }
 
     private generatePopcorns() {
