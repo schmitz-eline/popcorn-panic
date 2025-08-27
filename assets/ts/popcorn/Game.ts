@@ -34,8 +34,9 @@ export class Game {
                 )) {
                     if (projectile.hiddenNumber < 0) {
                         this.animation.stop();
+                        console.log('corn');
                     } else {
-                        console.log('...');
+                        console.log('popcorn');
                     }
                 }
             });
